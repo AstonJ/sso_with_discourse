@@ -27,13 +27,11 @@ create the setting for the class to read from as below.
 Now you can use this class in your controllers.
 get the request url for redirecting the user to the discourse sso end point.
 
-   sso = SsoWithDiscourse::Sso.new
-   
-   session[:sso] = sso
-   
-   redirect_to sso.request_url
+    sso = SsoWithDiscourse::Sso.new
+    session[:sso] = sso
+    redirect_to sso.request_url
   
-in the action for processing the return request, you need to get the sso instance from the session because it is required that the nonce
+In the action for processing the return request, you need to get the sso instance from the session because it is required that the nonce
 returned from Discourse matches the one stored in the instance as part of the parsing.
 
     sso = session[:sso]
@@ -46,9 +44,9 @@ If the verification is successful, you can inspect the following result:
     sso.user_info #the user information returned by Discourse.
   
   
-#About session store
+#About Session Store
 
-please note that you may need to store the sso instance in the session for persistence between requests. In rails you need to use other session store instead of cookie. 
+Please note that you may need to store the sso instance in the session for persistence between requests. In rails you need to use other session store instead of cookie. 
   
   
 
