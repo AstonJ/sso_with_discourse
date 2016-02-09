@@ -49,6 +49,9 @@ If the verification is successful, you can inspect the following result:
   sso.user_info #the user information returned by Discourse.
   
   
+About session store: please note that you may need to store the sso instance in the session for persistence between requests. In rails you need to use other session store instead of cookie. 
+  
+  
 
 
 
