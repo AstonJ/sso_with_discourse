@@ -1,7 +1,7 @@
 # sso_with_discourse
 Implementation in ruby for https://meta.discourse.org/t/using-discourse-as-a-sso-provider/32974
 
-Example
+# Example
 Using with Rails.
 
 Step 1: create a "lib" directory in your app's root directory and copy the sso_with_discourse.rb into it.
@@ -49,7 +49,9 @@ If the verification is successful, you can inspect the following result:
   sso.user_info #the user information returned by Discourse.
   
   
-About session store: please note that you may need to store the sso instance in the session for persistence between requests. In rails you need to use other session store instead of cookie. 
+#About session store
+
+please note that you may need to store the sso instance in the session for persistence between requests. In rails you need to use other session store instead of cookie. 
   
   
 
