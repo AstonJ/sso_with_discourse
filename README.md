@@ -36,17 +36,14 @@ get the request url for redirecting the user to the discourse sso end point.
 in the action for processing the return request, you need to get the sso instance from the session because it is required that the nonce
 returned from Discourse matches the one stored in the instance as part of the parsing.
 
-   sso = session[:sso]
-   
-   sso.parse(params)
+    sso = session[:sso]
+    sso.parse(params)
    
 If the verification is successful, you can inspect the following result:
 
-  sso.status  #supposed to be "success".
-  
-  sso.message #supposed to be "SSO verification passed."
-  
-  sso.user_info #the user information returned by Discourse.
+    sso.status  #supposed to be "success".
+    sso.message #supposed to be "SSO verification passed."
+    sso.user_info #the user information returned by Discourse.
   
   
 #About session store
